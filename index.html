@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roll dice</title>
+    <style>
+        .container{
+            height: 450px;
+            background-color: #A9C9FF;
+            background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+            width: 500px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 20px;
+           
+            
+        }
+        .img{
+            height: 270px;
+            display: block;
+            margin: 20px auto;
+            
+        }
+        .rotation{
+            animation: kj 1s infinite;
+        }
+        .btn{
+            display: block;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-decoration: none;
+            
+
+
+        }
+        .btn:hover{
+            background-color: black;
+            color: aliceblue;
+            transition: 0.5s;
+        }
+        @keyframes kj{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        
+         <img src="dice .png" class="img" id="img-change"><br/>
+         <button type="button" class="btn" onclick="rolling()">Roll Dice</button>
+
+    </div>
+
+
+
+    <script>
+ function rolling(){
+
+const min =1;
+const max =6;
+
+const hello = Math.round(Math.random()*(max-min))+min;
+const hii= document.getElementById("img-change")
+
+
+switch(hello){
+
+         case 1:
+         hii.src="dice (1).png";
+        break;
+        case 2:
+        hii.src="dice(2).png";
+        break;
+        case 3:
+        hii.src="dice (3).png";
+        break;
+        case 4:
+        hii.src="dice (4).png";
+        break;
+        case 5:
+        hii.src="dice (5).png";
+        break;
+        case 6:
+        hii.src="dice (6).png";
+        break;
+}
+hii.classList.add("rotation");
+setTimeout(() => {
+    hii.classList.remove("rotation")
+},1000);
+
+}
+
+    </script>
+    
+</body>
+</html>
